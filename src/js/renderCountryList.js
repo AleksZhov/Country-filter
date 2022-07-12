@@ -1,6 +1,5 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import refs from './refs.js';
-
 export function renderCountryList(countries) {
   if (countries.length === 1) {
     refs.countryListContainer.innerHTML = '';
@@ -14,13 +13,13 @@ export function renderCountryList(countries) {
       } = country;
       return `
       <h1><img src="${svg}" width = "80"/>   <b>${official}</b></h1>
-        <p> <b>Capital:</b>${capital}
+        <p> <b>Capital:  </b>${capital}
         </p>
         <p>
-          <b>Population:</b>${population}
+          <b>Population:  </b>${population}
         </p>
         <p>
-          <b>Languages:</b>${languages}
+          <b>Languages:  </b>${languages}
         </p>
       `;
     });
@@ -34,8 +33,7 @@ export function renderCountryList(countries) {
           flags: { svg },
         } = country;
         return `<li>
-      <h2 class="country__heading"><img src="${svg}" width = "40"/>   <b>${common}</b><h2/>
-        
+      <h2 class="country__heading"><img src="${svg}" width = "40"/>   <b>${common}</b><h2/> 
       </li>`;
       })
       .join('');
