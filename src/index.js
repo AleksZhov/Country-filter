@@ -20,7 +20,6 @@ function onInputHandle(evt) {
     fetchCountries(request)
       .then(countries => {
         renderCountryList(countries);
-        console.log(countries);
       })
       .catch(error => {
         console.log(error);
