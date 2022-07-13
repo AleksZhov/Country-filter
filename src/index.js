@@ -3,7 +3,7 @@ import debounce from 'lodash.debounce';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import refs from './js/refs.js';
 import { fetchCountries } from './js/fetchCountries';
-import { renderCountryList } from './js/renderCountryList';
+import { renderCurrentMarkup } from './js/renderCurrentMarkup';
 
 const DEBOUNCE_DELAY = 300;
 let request = '';
@@ -19,7 +19,7 @@ function onInputHandle(evt) {
   } else {
     fetchCountries(request)
       .then(countries => {
-        renderCountryList(countries);
+        renderCurrentMarkup(countries);
       })
       .catch(error => {
         console.log(error);
